@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jean Dupont</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: #f0f2f5;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+            background: #0078d7;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+        
+        .sidebar {
+            padding: 20px;
+            background: #444;
+            color: white;
+        }
+        
+        .main-content {
+            padding: 20px;
+        }
+        
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.3rem; color: #0078d7; margin: 15px 0; }
+        h3 { font-size: 1.1rem; margin: 10px 0; }
+        
+        .contact-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .contact-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-list i {
+            width: 20px;
+            margin-right: 8px;
+            color: #0078d7;
+        }
+        
+        .skills-list dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .skills-list dd {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .exp-item, .edu-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .date {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+        
+        .tech-tags {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        footer {
+            grid-column: 1 / -1;
+            background: #444;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            header { flex-direction: column; }
+            .profile-img { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1 id="name">Jean Dupont</h1>
+                <p id="title">Développeur Web Full Stack</p>
+            </div>
+            <img src="https://via.placeholder.com/100x100" alt="Profile" class="profile-img">
+        </header>
+        
+        <aside class="sidebar">
+            <h2>Contact</h2>
+            <ul class="contact-list" id="contact-list">
+                <!-- Contacts seront ajoutés ici par JavaScript -->
+            </ul>
+            
+            <h2>Compétences</h2>
+            <dl class="skills-list" id="skills-list">
+                <!-- Compétences seront ajoutées ici par JavaScript -->
+            </dl>
+        </aside>
+        
+        <main class="main-content">
+            <section>
+                <h2>Expérience Professionnelle</h2>
+                <div id="experience">
+                    <!-- Expériences seront ajoutées ici par JavaScript -->
+                </div>
+            </section>
+            
+            <section>
+                <h2>Formation</h2>
+                <div id="education">
+                    <!-- Formations seront ajoutées ici par JavaScript -->
+                </div>
+            </section>
+            
+            <section>
+                <h2>Projets</h2>
+                <div class="projects" id="projects">
+                    <!-- Projets seront ajoutés ici par JavaScript -->
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; <span id="current-year"></span> Jean Dupont | CV Developer Web</p>
+        </footer>
+    </div>
+
+    <script>
+        // Données du CV
+        const cvData = {
+            name: 'Jean Dupont',
+            title: 'Développeur Web Full Stack',
+            contact: {
+                email: 'jean.dupont@email.com',
+                phone: '+33 6 12 34 56 78',
+                location: 'Paris, France',
+                website: 'www.jeandupont.dev',
+                github: 'github.com/jeandupont',
+                linkedin: 'linkedin.com/in/jeandupont'
+            },
+            skills: {
+                'Frontend': 'HTML5, CSS3, JavaScript, React, Vue.js, Angular, SASS, Tailwind',
+                'Backend': 'PHP, Node.js, Express, Laravel, Symfony, Python, Django',
+                'Database': 'MySQL, PostgreSQL, MongoDB, Redis',
+                'DevOps': 'Docker, AWS, CI/CD, Git, GitHub Actions',
+                'Autres': 'REST API, GraphQL, TDD, Agile/Scrum, UI/UX Design'
+            },
+            experience: [
+                {
+                    job: 'Senior Web Developer - TechFusion',
+                    location: 'Paris',
+                    period: 'Jan 2021 - Présent',
+                    desc: 'Développement d\'applications web scalables avec React et Node.js. Chef d\'équipe pour des projets importants.',
+                    achievements: 'Optimisation de la performance, réduction des temps de chargement de 60%. Conception API REST pour 50K+ utilisateurs. Mise en place CI/CD.'
+                },
+                {
+                    job: 'Full Stack Developer - WebInnovate',
+                    location: 'Lyon',
+                    period: 'Mar 2018 - Dec 2020',
+                    desc: 'Développement de solutions web sur mesure utilisant Laravel et Vue.js.',
+                    achievements: 'Plateforme e-commerce générant 2M€ de revenus. Migration vers microservices. Implémentation système d\'authentification.'
+                },
+                {
+                    job: 'Web Developer - DigitalCraft',
+                    location: 'Bordeaux',
+                    period: 'Jul 2016 - Feb 2018',
+                    desc: 'Développement frontend et backend pour applications web et mobiles.',
+                    achievements: 'Application mobile hybride Ionic/Angular. Optimisation SEO avec augmentation trafic de 45%. Templates réutilisables.'
+                }
+            ],
+            education: [
+                {
+                    degree: 'Master en Développement Web',
+                    school: 'École Supérieure d\'Informatique, Paris',
+                    period: '2014 - 2016'
+                },
+                {
+                    degree: 'Licence en Informatique',
+                    school: 'Université de Paris, Paris',
+                    period: '2011 - 2014'
+                }
+            ],
+            projects: [
+                {
+                    name: 'E-commerce Platform',
+                    desc: 'Plateforme e-commerce complète avec paiement, gestion de stock et analyses.',
+                    tech: 'React, Node.js, MongoDB, Stripe, AWS'
+                },
+                {
+                    name: 'Task Management App',
+                    desc: 'Application de gestion de tâches avec fonctionnalités collaboratives.',
+                    tech: 'Vue.js, Laravel, MySQL, Docker'
+                },
+                {
+                    name: 'Real Estate Portal',
+                    desc: 'Portail immobilier avec recherche avancée et visualisation sur carte.',
+                    tech: 'Angular, Express, PostgreSQL, Google Maps API'
+                }
+            ]
+        };
+
+        // Fonction pour remplir les données de contact
+        function populateContact() {
+            const contactList = document.getElementById('contact-list');
+            const contactIcons = {
+                email: 'fa-envelope',
+                phone: 'fa-phone',
+                location: 'fa-map-marker-alt',
+                website: 'fa-globe',
+                github: 'fa-github',
+                linkedin: 'fa-linkedin'
+            };
+
+            for (const [key, value] of Object.entries(cvData.contact)) {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas ${contactIcons[key]}"></i> ${value}`;
+                contactList.appendChild(li);
+            }
+        }
+
+        // Fonction pour remplir les compétences
+        function populateSkills() {
+            const skillsList = document.getElementById('skills-list');
+            
+            for (const [category, skills] of Object.entries(cvData.skills)) {
+                const dt = document.createElement('dt');
+                dt.textContent = category;
+                
+                const dd = document.createElement('dd');
+                dd.textContent = skills;
+                
+                skillsList.appendChild(dt);
+                skillsList.appendChild(dd);
+            }
+        }
+
+        // Fonction pour remplir les expériences
+        function populateExperience() {
+            const experienceSection = document.getElementById('experience');
+            
+            cvData.experience.forEach(exp => {
+                const div = document.createElement('div');
+                div.className = 'exp-item';
+                div.innerHTML = `
+                    <h3>${exp.job}</h3>
+                    <p>${exp.location}</p>
+                    <div class="date">${exp.period}</div>
+                    <p>${exp.desc}</p>
+                    <p><strong>Réalisations:</strong> ${exp.achievements}</p>
+                `;
+                experienceSection.appendChild(div);
+            });
+        }
+
+        // Fonction pour remplir les formations
+        function populateEducation() {
+            const educationSection = document.getElementById('education');
+            
+            cvData.education.forEach(edu => {
+                const div = document.createElement('div');
+                div.className = 'edu-item';
+                div.innerHTML = `
+                    <h3>${edu.degree}</h3>
+                    <p>${edu.school}</p>
+                    <div class="date">${edu.period}</div>
+                `;
+                educationSection.appendChild(div);
+            });
+        }
+
+        // Fonction pour remplir les projets
+        function populateProjects() {
+            const projectsSection = document.getElementById('projects');
+            
+            cvData.projects.forEach(project => {
+                const div = document.createElement('div');
+                div.className = 'project-card';
+                div.innerHTML = `
+                    <h3>${project.name}</h3>
+                    <p>${project.desc}</p>
+                    <div class="tech-tags">
+                        <strong>Technologies:</strong> ${project.tech}
+                    </div>
+                `;
+                projectsSection.appendChild(div);
+            });
+        }
+
+        // Année courante dans le footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Initialiser les données
+        window.onload = function() {
+            document.getElementById('name').textContent = cvData.name;
+            document.getElementById('title').textContent = cvData.title;
+            populateContact();
+            populateSkills();
+            populateExperience();
+            populateEducation();
+            populateProjects();
+        };
+    </script>
+</body>
+</html>
