@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jean Dupont</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 60px;
+        }
+
+        /* En-tête */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #000;
+        }
+
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .job-title {
+            font-size: 14pt;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact-info {
+            font-size: 10pt;
+            margin-top: 10px;
+        }
+
+        .contact-info p {
+            margin: 3px 0;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Expérience et Formation */
+        .experience-item, .education-item {
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+
+        .job-header, .edu-header {
+            margin-bottom: 5px;
+        }
+
+        .company, .school {
+            font-weight: normal;
+            font-size: 11pt;
+        }
+
+        .period {
+            font-weight: bold;
+            font-size: 10pt;
+            margin: 3px 0;
+        }
+
+        .location {
+            font-style: italic;
+            font-size: 10pt;
+        }
+
+        .description {
+            margin: 8px 0 5px 0;
+            text-align: justify;
+        }
+
+        .achievements {
+            margin-top: 5px;
+        }
+
+        .achievements strong {
+            font-weight: bold;
+        }
+
+        /* Compétences */
+        .skills-section {
+            margin-bottom: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category strong {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        /* Projets */
+        .project-item {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+
+        .project-name {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .tech-stack {
+            font-size: 10pt;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        /* Liste à puces simple */
+        ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        /* Pour l'impression PDF */
+        @media print {
+            body {
+                padding: 20px;
+            }
+        }
+
+        @page {
+            margin: 2cm;
+        }
+    </style>
+</head>
+<body>
+    <!-- EN-TÊTE -->
+    <div class="header">
+        <h1>Jean Dupont</h1>
+        <p class="job-title">Développeur Web Full Stack</p>
+        <div class="contact-info">
+            <p>Email: jean.dupont@email.com | Téléphone: +33 6 12 34 56 78</p>
+            <p>Localisation: Paris, France</p>
+            <p>Site web: www.jeandupont.dev | GitHub: github.com/jeandupont | LinkedIn: linkedin.com/in/jeandupont</p>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="section skills-section">
+        <h2>Compétences</h2>
+        <div class="skill-category">
+            <strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Vue.js, Angular, SASS, Tailwind
+        </div>
+        <div class="skill-category">
+            <strong>Backend:</strong> PHP, Node.js, Express, Laravel, Symfony, Python, Django
+        </div>
+        <div class="skill-category">
+            <strong>Database:</strong> MySQL, PostgreSQL, MongoDB, Redis
+        </div>
+        <div class="skill-category">
+            <strong>DevOps:</strong> Docker, AWS, CI/CD, Git, GitHub Actions
+        </div>
+        <div class="skill-category">
+            <strong>Autres:</strong> REST API, GraphQL, TDD, Agile/Scrum, UI/UX Design
+        </div>
+    </div>
+
+    <!-- EXPÉRIENCE PROFESSIONNELLE -->
+    <div class="section">
+        <h2>Expérience Professionnelle</h2>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <h3>Senior Web Developer</h3>
+                <p class="company">TechFusion</p>
+                <p class="period">Janvier 2021 - Présent</p>
+                <p class="location">Paris, France</p>
+            </div>
+            <p class="description">
+                Développement d'applications web scalables avec React et Node.js. Chef d'équipe pour des projets importants.
+            </p>
+            <p class="achievements">
+                <strong>Réalisations:</strong> Optimisation de la performance, réduction des temps de chargement de 60%. Conception API REST pour 50K+ utilisateurs. Mise en place CI/CD.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <h3>Full Stack Developer</h3>
+                <p class="company">WebInnovate</p>
+                <p class="period">Mars 2018 - Décembre 2020</p>
+                <p class="location">Lyon, France</p>
+            </div>
+            <p class="description">
+                Développement de solutions web sur mesure utilisant Laravel et Vue.js.
+            </p>
+            <p class="achievements">
+                <strong>Réalisations:</strong> Plateforme e-commerce générant 2M€ de revenus. Migration vers microservices. Implémentation système d'authentification.
+            </p>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <h3>Web Developer</h3>
+                <p class="company">DigitalCraft</p>
+                <p class="period">Juillet 2016 - Février 2018</p>
+                <p class="location">Bordeaux, France</p>
+            </div>
+            <p class="description">
+                Développement frontend et backend pour applications web et mobiles.
+            </p>
+            <p class="achievements">
+                <strong>Réalisations:</strong> Application mobile hybride Ionic/Angular. Optimisation SEO avec augmentation trafic de 45%. Templates réutilisables.
+            </p>
+        </div>
+    </div>
+
+    <!-- FORMATION -->
+    <div class="section">
+        <h2>Formation</h2>
+
+        <div class="education-item">
+            <div class="edu-header">
+                <h3>Master en Développement Web</h3>
+                <p class="school">École Supérieure d'Informatique, Paris</p>
+                <p class="period">2014 - 2016</p>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="edu-header">
+                <h3>Licence en Informatique</h3>
+                <p class="school">Université de Paris, Paris</p>
+                <p class="period">2011 - 2014</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJETS -->
+    <div class="section">
+        <h2>Projets</h2>
+
+        <div class="project-item">
+            <p class="project-name">E-commerce Platform</p>
+            <p class="description">
+                Plateforme e-commerce complète avec paiement, gestion de stock et analyses.
+            </p>
+            <p class="tech-stack">
+                <strong>Technologies:</strong> React, Node.js, MongoDB, Stripe, AWS
+            </p>
+        </div>
+
+        <div class="project-item">
+            <p class="project-name">Task Management App</p>
+            <p class="description">
+                Application de gestion de tâches avec fonctionnalités collaboratives.
+            </p>
+            <p class="tech-stack">
+                <strong>Technologies:</strong> Vue.js, Laravel, MySQL, Docker
+            </p>
+        </div>
+
+        <div class="project-item">
+            <p class="project-name">Real Estate Portal</p>
+            <p class="description">
+                Portail immobilier avec recherche avancée et visualisation sur carte.
+            </p>
+            <p class="tech-stack">
+                <strong>Technologies:</strong> Angular, Express, PostgreSQL, Google Maps API
+            </p>
+        </div>
+    </div>
+</body>
+</html>
